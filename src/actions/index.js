@@ -39,7 +39,7 @@ export const fetchProducts = () => (dispatch) => {
         type: FETCH_PRODUCTS_REQUEST,
     });
 
-    fbdb.ref('products').once('value', (snapshot) => {
+    fbdb.ref('products').on('value', (snapshot) => {
         const productsObj = snapshot.val();
         const products = [];
         Object.keys(productsObj).forEach(key => products.push({
