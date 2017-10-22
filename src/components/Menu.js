@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 const Menu = () => (
@@ -18,17 +18,6 @@ const Menu = () => (
                 <LinkContainer to="/customers">
                     <NavItem>Customers</NavItem>
                 </LinkContainer>
-                <NavDropdown title="User" id="user-dropdown">
-                    <LinkContainer to="/user/overview">
-                        <MenuItem>Users Overview</MenuItem>
-                    </LinkContainer>
-                    <LinkContainer to="/user/create">
-                        <MenuItem>Create User</MenuItem>
-                    </LinkContainer>
-                    <LinkContainer to="/user/modify">
-                        <MenuItem>Modify User</MenuItem>
-                    </LinkContainer>
-                </NavDropdown>
             </Nav>
         </Navbar.Collapse>
     </Navbar>
