@@ -1,0 +1,66 @@
+{
+    "customers": [
+        {
+            "id": 1,
+            "first_name": "Michael",
+            "last_name": "Blahut"
+        },
+        {
+            "id": 2,
+            "first_name": "Helena",
+            "last_name": "Brejlová"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Švestka",
+            "amount": 0
+        },
+        {
+            "id": 2,
+            "name": "Brusinka",
+            "amount": 0
+        },
+        {
+            "id": 3,
+            "name": "Meruňka",
+            "amount": 0
+        },
+        {
+            "id": 4,
+            "name": "Jablko",
+            "amount": 0
+        },
+        {
+            "id": 5,
+            "name": "Červená cibule",
+            "amount": 0
+        },
+        {
+            "id": 6,
+            "name": "Pečená paprika",
+            "amount": 0
+        },
+        {
+            "id": 7,
+            "name": "Červená řepa",
+            "amount": 0
+        },
+        {
+            "id": 8,
+            "name": "Dýně",
+            "amount": 0
+        },
+        {
+            "id": 9,
+            "name": "Ananas",
+            "amount": 0
+        },
+        {
+            "id": 10,
+            "name": "Brutál",
+            "amount": 0
+        }
+    ]
+}

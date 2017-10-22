@@ -1,0 +1,23 @@
+{
+    "extends": [
+      "react-app",
+      "airbnb"
+    ],
+    "rules": {
+      "semi": "error",
+      "indent": ["error", 4, { "SwitchCase": 1 }],
+      "max-len": "off",
+      "no-use-before-define": "off",
+      "function-paren-newline": "off",
+      "react/jsx-indent": ["error", 4],
+      "react/jsx-filename-extension": "off",
+      "jsx-a11y/href-no-hash": "off",
+      "jsx-a11y/anchor-is-valid": [
+        "error", {
+          "components": [ "Link" ],
+          "specialLink": [ "hrefLeft", "hrefRight", "to" ],
+          "aspects": [ "noHref", "invalidHref", "preferButton" ]
+        }
+      ]
+    }
+  }
