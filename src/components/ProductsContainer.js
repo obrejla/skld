@@ -25,7 +25,7 @@ ProductsContainer.propTypes = {
     dispatch: PropTypes.func.isRequired,
     products: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.number,
+            id: PropTypes.string,
             name: PropTypes.string,
             amount: PropTypes.number,
         }),

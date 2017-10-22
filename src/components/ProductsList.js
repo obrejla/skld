@@ -7,9 +7,9 @@ const ProductsList = ({ products }) => (
     <Table striped>
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Amount</th>
+                <th />
             </tr>
         </thead>
         <tbody>
@@ -23,7 +23,7 @@ const ProductsList = ({ products }) => (
 ProductsList.propTypes = {
     products: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.number,
+            id: PropTypes.string,
             name: PropTypes.string,
             amount: PropTypes.number,
         }),
