@@ -21,8 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "firebase deploy",
-    "server": "json-server --watch ./db.json --port 3001"
+    "deploy": "firebase deploy"
   },
   "devDependencies": {
     "eslint": "^4.9.0",
