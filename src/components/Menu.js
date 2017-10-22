@@ -8,26 +8,29 @@ const Menu = () => (
             <Navbar.Brand>
                 SKLD
             </Navbar.Brand>
+            <Navbar.Toggle />
         </Navbar.Header>
-        <Nav>
-            <LinkContainer to="/products">
-                <NavItem>Products</NavItem>
-            </LinkContainer>
-            <LinkContainer to="/customers">
-                <NavItem>Customers</NavItem>
-            </LinkContainer>
-            <NavDropdown title="User" id="user-dropdown">
-                <LinkContainer to="/user/overview">
-                    <MenuItem>Users Overview</MenuItem>
+        <Navbar.Collapse>
+            <Nav>
+                <LinkContainer to="/products">
+                    <NavItem>Products</NavItem>
                 </LinkContainer>
-                <LinkContainer to="/user/create">
-                    <MenuItem>Create User</MenuItem>
+                <LinkContainer to="/customers">
+                    <NavItem>Customers</NavItem>
                 </LinkContainer>
-                <LinkContainer to="/user/modify">
-                    <MenuItem>Modify User</MenuItem>
-                </LinkContainer>
-            </NavDropdown>
-        </Nav>
+                <NavDropdown title="User" id="user-dropdown">
+                    <LinkContainer to="/user/overview">
+                        <MenuItem>Users Overview</MenuItem>
+                    </LinkContainer>
+                    <LinkContainer to="/user/create">
+                        <MenuItem>Create User</MenuItem>
+                    </LinkContainer>
+                    <LinkContainer to="/user/modify">
+                        <MenuItem>Modify User</MenuItem>
+                    </LinkContainer>
+                </NavDropdown>
+            </Nav>
+        </Navbar.Collapse>
     </Navbar>
 );
 
