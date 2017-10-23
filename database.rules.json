@@ -1,6 +1,9 @@
 {
-  "rules": {
-    ".read": true,
-    ".write": true
-  }
+    "rules": {
+        ".read": "auth.uid === 'NnMUqOkNCsajACuLpHRzq9xdM2l1'",
+        ".write": "auth.uid === 'NnMUqOkNCsajACuLpHRzq9xdM2l1'",
+        "products": {
+            ".read": "auth != null"
+        }
+    }
 }
