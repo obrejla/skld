@@ -3,6 +3,12 @@ import * as selectors from '../reducers/index';
 
 const API_LINK = 'http://localhost:3001';
 
+export const USER_SIGNED_IN = 'USER_SIGNED_IN';
+export const userSignedIn = user => ({
+    type: USER_SIGNED_IN,
+    user,
+});
+
 export const ADD_PRODUCT_AMOUNT = 'ADD_PRODUCT_AMOUNT';
 export const addProductAmount = (productId, amount) => (dispatch, getState) => {
     const state = getState();
