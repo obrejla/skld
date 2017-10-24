@@ -82,7 +82,7 @@ NumberModalDialog.defaultProps = {
 NumberModalDialog.propTypes = {
     bsStyle: PropTypes.string,
     title: PropTypes.string,
-    children: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
     onProcess: PropTypes.func.isRequired,
 };
 
