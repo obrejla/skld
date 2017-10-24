@@ -3,7 +3,7 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 const Menu = () => (
-    <Navbar inverse>
+    <Navbar inverse fixedTop>
         <Navbar.Header>
             <Navbar.Brand>
                 SKLD
