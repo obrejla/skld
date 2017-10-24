@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import firebase from 'firebase';
 import firebaseui from 'firebaseui';
+import './login.css';
 import { userSignedIn } from '../actions/index';
 import { isUserSignedIn } from '../reducers/index';
 
