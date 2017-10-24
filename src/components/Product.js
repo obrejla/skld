@@ -4,8 +4,19 @@ import { Row, Col, ButtonGroup } from 'react-bootstrap';
 import AddButton from './AddButton';
 import RemoveButton from './RemoveButton';
 
+const getColorClass = (amount) => {
+    let result = '';
+    if (amount < 6) {
+        result = 'list-group-item-warning';
+        if (amount === 0) {
+            result = 'list-group-item-danger';
+        }
+    }
+    return result;
+};
+
 const Product = ({ id, name, amount }) => (
-    <li className="list-group-item">
+    <li className={`list-group-item ${getColorClass(amount)}`}>
         <Row>
             <Col md={3}><h4>{name}</h4></Col>
             <Col md={7}><h5>{amount}</h5></Col>
