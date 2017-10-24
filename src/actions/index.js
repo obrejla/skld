@@ -3,12 +3,20 @@ import * as selectors from '../reducers/index';
 
 const API_LINK = 'http://localhost:3001';
 
+const USER_UID_KEY = 'user_uid';
 export const USER_SIGNED_IN = 'USER_SIGNED_IN';
 export const userSignedIn = (userUid) => {
-    localStorage.setItem('user_uid', userUid);
+    localStorage.setItem(USER_UID_KEY, userUid);
     return {
         type: USER_SIGNED_IN,
         userUid,
+    };
+};
+export const USER_SIGNED_OUT = 'USER_SIGNED_OUT';
+export const userSignedOut = () => {
+    localStorage.removeItem(USER_UID_KEY);
+    return {
+        type: USER_SIGNED_OUT,
     };
 };
 
