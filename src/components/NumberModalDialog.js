@@ -17,18 +17,24 @@ class NumberModalDialog extends Component {
     }
 
     onShow() {
-        this.setState({
-            isVisible: true,
-        });
+        if (!this.state.isVisible) {
+            this.setState({
+                isVisible: true,
+            });
+        }
     }
 
-    onClose() {
+    onClose(event) {
+        if (event) {
+            event.stopPropagation();
+        }
         this.setState({
             isVisible: false,
         });
     }
 
-    onProcess() {
+    onProcess(event) {
+        event.stopPropagation();
         this.props.onProcess(this.state.amount);
         this.setState({
             isVisible: false,
@@ -49,8 +55,8 @@ class NumberModalDialog extends Component {
             children,
         } = this.props;
         return (
-            <span>
-                <Button bsStyle={bsStyle} onClick={this.onShow}>{children}</Button>
+            <Button block href="#" bsStyle={bsStyle} onClick={this.onShow}>
+                {children}
                 <Modal show={this.state.isVisible} onHide={this.onClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>{title}</Modal.Title>
@@ -69,7 +75,7 @@ class NumberModalDialog extends Component {
                         <Button onClick={this.onClose} bsStyle="primary">Cancel</Button>
                     </Modal.Footer>
                 </Modal>
-            </span>
+            </Button>
         );
     }
 }
