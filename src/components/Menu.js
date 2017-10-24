@@ -19,6 +19,11 @@ const Menu = () => (
                     <NavItem>Customers</NavItem>
                 </LinkContainer>
             </Nav>
+            <Nav pullRight>
+                <LinkContainer to="/logout">
+                    <NavItem>Logout</NavItem>
+                </LinkContainer>
+            </Nav>
         </Navbar.Collapse>
     </Navbar>
 );
