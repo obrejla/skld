@@ -29,8 +29,8 @@ class Login extends Component {
         }
         const uiConfig = {
             callbacks: {
-                signInSuccess: () => {
-                    onSignIn(true);
+                signInSuccess: (user) => {
+                    onSignIn(user.uid);
                     this.setState({
                         from,
                     });
@@ -68,8 +68,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    onSignIn: (user) => {
-        dispatch(userSignedIn(user));
+    onSignIn: (userUid) => {
+        dispatch(userSignedIn(userUid));
     },
 });
 
