@@ -1,6 +1,6 @@
-import { USER_SIGNED_IN, USER_SIGNED_OUT } from '../actions/index';
+import { USER_SIGNED_IN, USER_SIGNED_OUT, getInirUserUid } from '../actions/index';
 
-const userUid = (state = localStorage.getItem('user_uid'), action) => {
+const userUid = (state = getInirUserUid(), action) => {
     switch (action.type) {
         case USER_SIGNED_IN:
             return action.userUid;
