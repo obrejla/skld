@@ -34,6 +34,7 @@ class NumberModalDialog extends Component {
     }
 
     onProcess(event) {
+        event.preventDefault();
         event.stopPropagation();
         this.props.onProcess(this.state.amount);
         this.setState({
@@ -62,7 +63,7 @@ class NumberModalDialog extends Component {
                         <Modal.Title>{title}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Form inline>
+                        <Form inline onSubmit={this.onProcess}>
                             <FormGroup controlId="formInlineAmount">
                                 <ControlLabel>Amount</ControlLabel>
                                 {' '}
