@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col, ButtonGroup } from 'react-bootstrap';
 import AddButton from './AddButton';
-import RemoveButton from './RemoveButton';
+import ExportButton from './ExportButton';
 
 const getColorClass = (amount) => {
     let result = '';
@@ -23,7 +23,7 @@ const Product = ({ id, name, amount }) => (
             <Col md={2}>
                 <ButtonGroup justified>
                     <AddButton productId={id} />
-                    <RemoveButton productId={id} />
+                    <ExportButton productId={id} />
                 </ButtonGroup>
             </Col>
         </Row>
