@@ -10,7 +10,7 @@ const NewExportContainer = ({ customers }) => (
         <FormGroup controlId="formControlsSelect">
             <ControlLabel>Select</ControlLabel>
             <FormControl componentClass="select" placeholder="select">
-                {customers.map(customer => <option value={customer.id}>{customer.surname}, {customer.first_name}</option>)}
+                {customers.map(customer => <option key={customer.id} value={customer.id}>{customer.surname}, {customer.first_name}</option>)}
             </FormControl>
         </FormGroup>
     </div>
