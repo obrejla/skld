@@ -1,8 +1,6 @@
 import { fbdb } from '../firebase';
 import * as selectors from '../reducers/index';
 
-const API_LINK = 'http://localhost:3001';
-
 const USER_UID_KEY = 'user_uid';
 export const getInirUserUid = () => localStorage.getItem(USER_UID_KEY);
 export const USER_SIGNED_IN = 'USER_SIGNED_IN';
@@ -80,13 +78,14 @@ export const fetchCustomers = () => (dispatch) => {
         type: FETCH_CUSTOMERS_REQUEST,
     });
 
-    return fetch(`${API_LINK}/customers`).then(
-        response => response.json(),
-        error => dispatch({
-            type: FETCH_CUSTOMERS_FAILURE,
-            error,
-        }),
-    ).then((customers) => {
+    fbdb.ref('customers').on('value', (snapshot) => {
+        const customersObj = snapshot.val();
+        const customers = [];
+        Object.keys(customersObj).forEach(key => customers.push({
+            id: key,
+            first_name: customersObj[key].first_name,
+            surname: customersObj[key].surname,
+        }));
         dispatch({
             type: FETCH_CUSTOMERS_SUCCESS,
             customers,
