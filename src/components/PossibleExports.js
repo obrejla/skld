@@ -1,10 +1,11 @@
 import React from 'react';
 import ActiveExportsContainer from './ActiveExportsContainer';
+import NewExportContainer from './NewExportContainer';
 
 const PossibleExports = () => (
     <div>
         <ActiveExportsContainer />
-        Create new transaction:
+        <NewExportContainer />
     </div>
 );
 
