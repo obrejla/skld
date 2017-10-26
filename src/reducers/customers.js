@@ -12,3 +12,4 @@ const customers = (state = [], action) => {
 export default customers;
 
 export const getAll = state => state;
+export const getCustomer = (state, customerId) => state.find(customer => customer.id === customerId);
