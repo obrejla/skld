@@ -44,4 +44,4 @@ const modifyProductAmount = (product = {}, action) => {
 export default products;
 
 export const getAll = state => state;
-export const getProduct = (state, productId) => state.find(product => product.id === productId);
+export const getProduct = (state, productId) => state.find(product => product.id === productId);
