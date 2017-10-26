@@ -1,5 +1,20 @@
+import uuid from 'uuid';
 import { fbdb } from '../firebase';
 import * as selectors from '../reducers/index';
+
+export const ADD_ACTIVE_EXPORT = 'ADD_ACTIVE_EXPORT';
+export const addActiveExport = (customerId, productId, amount) => ({
+    type: ADD_ACTIVE_EXPORT,
+    id: uuid(),
+    customerId,
+    productId,
+    amount,
+});
+export const REMOVE_ACTIVE_EXPORT = 'REMOVE_ACTIVE_EXPORT';
+export const removeActiveExport = id => ({
+    type: REMOVE_ACTIVE_EXPORT,
+    id,
+});
 
 const USER_UID_KEY = 'user_uid';
 export const getInirUserUid = () => localStorage.getItem(USER_UID_KEY);
