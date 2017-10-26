@@ -62,12 +62,11 @@ export const removeProductAmount = (productId, amount) => (dispatch, getState) =
     fbdb.ref(`products/${productId}/amount`).set(newAmount);
 };
 
-export const FETCH_PRODUCTS_REQUEST = 'FETCH_PRODUCTS_REQUEST';
-export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
-export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE';
-export const fetchProducts = () => (dispatch) => {
+export const INIT_PRODUCTS = 'INIT_PRODUCTS';
+export const UPDATE_PRODUCTS = 'UPDATE_PRODUCTS';
+export const initProducts = () => (dispatch) => {
     dispatch({
-        type: FETCH_PRODUCTS_REQUEST,
+        type: INIT_PRODUCTS,
     });
 
     fbdb.ref('products').on('value', (snapshot) => {
@@ -79,7 +78,7 @@ export const fetchProducts = () => (dispatch) => {
             amount: productsObj[key].amount,
         }));
         dispatch({
-            type: FETCH_PRODUCTS_SUCCESS,
+            type: UPDATE_PRODUCTS,
             products,
         });
     });

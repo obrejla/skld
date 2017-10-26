@@ -1,14 +1,34 @@
+import { combineReducers } from 'redux';
 import {
-    FETCH_PRODUCTS_FAILURE,
-    FETCH_PRODUCTS_REQUEST,
-    FETCH_PRODUCTS_SUCCESS,
+    INIT_PRODUCTS,
+    UPDATE_PRODUCTS,
     ADD_PRODUCT_AMOUNT,
     REMOVE_PRODUCT_AMOUNT,
 } from '../actions/index';
 
+const initProducts = (state = false, action) => {
+    switch (action.type) {
+        case INIT_PRODUCTS:
+            return true;
+        case UPDATE_PRODUCTS:
+            return false;
+        default:
+            return state;
+    }
+};
+
+const productsDidInit = (state = false, action) => {
+    switch (action.type) {
+        case INIT_PRODUCTS:
+            return true;
+        default:
+            return state;
+    }
+};
+
 const products = (state = [], action) => {
     switch (action.type) {
-        case FETCH_PRODUCTS_SUCCESS:
+        case UPDATE_PRODUCTS:
             return action.products;
         case ADD_PRODUCT_AMOUNT:
         case REMOVE_PRODUCT_AMOUNT:
@@ -41,7 +61,13 @@ const modifyProductAmount = (product = {}, action) => {
     }
 };
 
-export default products;
+export default combineReducers({
+    initProducts,
+    productsDidInit,
+    products,
+});
 
-export const getAll = state => state;
-export const getProduct = (state, productId) => state.find(product => product.id === productId);
+export const getAll = state => state.products;
+export const getProduct = (state, productId) => state.products.find(product => product.id === productId);
+export const isProductsDidInit = state => state.productsDidInit;
+export const isInitProducts = state => state.initProducts;

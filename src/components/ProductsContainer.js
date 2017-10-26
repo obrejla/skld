@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchProducts } from '../actions/index';
-import { getProducts } from '../reducers/index';
+import { initProducts } from '../actions/index';
+import { getProducts, isProductsDidInit } from '../reducers/index';
 import ProductsList from './ProductsList';
-
-const mapStateToProps = state => ({
-    products: getProducts(state),
-});
 
 class ProductsContainer extends Component {
     componentDidMount() {
-        this.props.dispatch(fetchProducts());
+        if (!this.props.isProductsDidInit) {
+            this.props.initProducts();
+        }
     }
 
     render() {
@@ -22,7 +20,8 @@ class ProductsContainer extends Component {
 }
 
 ProductsContainer.propTypes = {
-    dispatch: PropTypes.func.isRequired,
+    isProductsDidInit: PropTypes.bool.isRequired,
+    initProducts: PropTypes.func.isRequired,
     products: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,
@@ -32,6 +31,16 @@ ProductsContainer.propTypes = {
     ).isRequired,
 };
 
+const mapStateToProps = state => ({
+    products: getProducts(state),
+    isProductsDidInit: isProductsDidInit(state),
+});
+
+const mapDispatchToProps = {
+    initProducts,
+};
+
 export default connect(
     mapStateToProps,
+    mapDispatchToProps,
 )(ProductsContainer);

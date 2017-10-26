@@ -16,6 +16,8 @@ export default rootReducer;
 export const isUserSignedIn = state => !!state.userUid;
 export const getProducts = state => productsSelectors.getAll(state.products);
 export const getProduct = (state, productId) => productsSelectors.getProduct(state.products, productId);
+export const isProductsDidInit = state => productsSelectors.isProductsDidInit(state.products);
+export const isInitProducts = state => productsSelectors.isInitProducts(state.products);
 export const getCustomers = state => customersSelectors.getAll(state.customers);
 export const getCustomer = (state, customerId) => customersSelectors.getCustomer(state.customers, customerId);
 export const getActiveExports = state => state.activeExports;
