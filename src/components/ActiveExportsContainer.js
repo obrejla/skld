@@ -22,16 +22,23 @@ class ActiveExportsContainer extends React.Component {
 
     render() {
         return (
-            <ListGroup>
-                {
-                    this.props.activeExports.map(activeExport => (<ActiveExport
-                        key={activeExport.id}
-                        isActive={this.state.selectedExportId === activeExport.id}
-                        onExportSelect={this.onExportSelect}
-                        activeExport={activeExport}
-                    />))
+            <div>
+                {this.props.activeExports.length > 0 &&
+                    <div>
+                        Add this export to the existing transaction?
+                        <ListGroup>
+                            {
+                                this.props.activeExports.map(activeExport => (<ActiveExport
+                                    key={activeExport.id}
+                                    isActive={this.state.selectedExportId === activeExport.id}
+                                    onExportSelect={this.onExportSelect}
+                                    activeExport={activeExport}
+                                />))
+                            }
+                        </ListGroup>
+                    </div>
                 }
-            </ListGroup>
+            </div>
         );
     }
 }

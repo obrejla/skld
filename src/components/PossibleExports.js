@@ -3,7 +3,6 @@ import ActiveExportsContainer from './ActiveExportsContainer';
 
 const PossibleExports = () => (
     <div>
-        Add export to existing transaction?
         <ActiveExportsContainer />
         Create new transaction:
     </div>
