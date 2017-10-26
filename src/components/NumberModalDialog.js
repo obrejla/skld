@@ -67,7 +67,7 @@ class NumberModalDialog extends Component {
                             <FormGroup controlId="formInlineAmount">
                                 <ControlLabel>Amount</ControlLabel>
                                 {' '}
-                                <FormControl type="text" placeholder="1" onChange={this.onChange} />
+                                <FormControl autoFocus type="text" placeholder="1" onChange={this.onChange} />
                             </FormGroup>
                         </Form>
                     </Modal.Body>
