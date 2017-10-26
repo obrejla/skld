@@ -64,24 +64,26 @@ export const removeProductAmount = (productId, amount) => (dispatch, getState) =
 
 export const INIT_PRODUCTS = 'INIT_PRODUCTS';
 export const UPDATE_PRODUCTS = 'UPDATE_PRODUCTS';
-export const initProducts = () => (dispatch) => {
-    dispatch({
-        type: INIT_PRODUCTS,
-    });
-
-    fbdb.ref('products').on('value', (snapshot) => {
-        const productsObj = snapshot.val();
-        const products = [];
-        Object.keys(productsObj).forEach(key => products.push({
-            id: key,
-            name: productsObj[key].name,
-            amount: productsObj[key].amount,
-        }));
+export const initProducts = () => (dispatch, getState) => {
+    if (!selectors.isProductsDidInit(getState())) {
         dispatch({
-            type: UPDATE_PRODUCTS,
-            products,
+            type: INIT_PRODUCTS,
         });
-    });
+
+        fbdb.ref('products').on('value', (snapshot) => {
+            const productsObj = snapshot.val();
+            const products = [];
+            Object.keys(productsObj).forEach(key => products.push({
+                id: key,
+                name: productsObj[key].name,
+                amount: productsObj[key].amount,
+            }));
+            dispatch({
+                type: UPDATE_PRODUCTS,
+                products,
+            });
+        });
+    }
 };
 
 export const FETCH_CUSTOMERS_REQUEST = 'FETCH_CUSTOMERS_REQUEST';
