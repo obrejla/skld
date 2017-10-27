@@ -1,3 +1,4 @@
+import { combineReducers } from 'redux';
 import {
     INIT_CUSTOMERS,
     UPDATE_CUSTOMERS,
@@ -12,7 +13,9 @@ const customers = (state = [], action) => {
     }
 };
 
-export default customers;
+export default combineReducers({
+    customers,
+});
 
-export const getAll = state => state;
-export const getCustomer = (state, customerId) => state.find(customer => customer.id === customerId);
+export const getAll = state => state.customers;
+export const getCustomer = (state, customerId) => state.customers.find(customer => customer.id === customerId);
