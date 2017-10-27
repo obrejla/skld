@@ -6,13 +6,22 @@ import { getCustomers } from '../reducers/index';
 import { initCustomers } from '../actions/index';
 
 class NewExportContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.onSelect = this.onSelect.bind(this);
+    }
+
     componentWillMount() {
         this.props.initCustomers();
     }
 
+    onSelect(customerId) {
+        this.customerId = customerId;
+    }
+
     render() {
         return (
-            <NewExport customers={this.props.customers} />
+            <NewExport customers={this.props.customers} onSelect={this.onSelect} />
         );
     }
 }
