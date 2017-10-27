@@ -1,4 +1,7 @@
-import { INIT_CUSTOMERS, UPDATE_CUSTOMERS } from '../actions/index';
+import {
+    INIT_CUSTOMERS,
+    UPDATE_CUSTOMERS,
+} from '../actions/index';
 
 const customers = (state = [], action) => {
     switch (action.type) {
