@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { ListGroup } from 'react-bootstrap';
-import ActiveExport from './ActiveExport';
 import { getActiveExports } from '../reducers/index';
+import ActiveExports from './ActiveExports';
 
 class ActiveExportsContainer extends React.Component {
     constructor(props) {
@@ -22,23 +21,11 @@ class ActiveExportsContainer extends React.Component {
 
     render() {
         return (
-            <div>
-                {this.props.activeExports.length > 0 &&
-                    <div>
-                        Add this export to the existing transaction?
-                        <ListGroup>
-                            {
-                                this.props.activeExports.map(activeExport => (<ActiveExport
-                                    key={activeExport.id}
-                                    isActive={this.state.selectedExportId === activeExport.id}
-                                    onExportSelect={this.onExportSelect}
-                                    activeExport={activeExport}
-                                />))
-                            }
-                        </ListGroup>
-                    </div>
-                }
-            </div>
+            <ActiveExports
+                activeExports={this.props.activeExports}
+                selectedExportId={this.state.selectedExportId}
+                onExportSelect={this.onExportSelect}
+            />
         );
     }
 }
