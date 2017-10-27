@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchCustomers } from '../actions/index';
+import { initCustomers } from '../actions/index';
 import { getCustomers } from '../reducers/index';
 
 class CustomersContainer extends React.Component {
     componentDidMount() {
-        this.props.dispatch(fetchCustomers());
+        this.props.dispatch(initCustomers());
     }
 
     render() {

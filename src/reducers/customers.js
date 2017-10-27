@@ -1,8 +1,8 @@
-import { FETCH_CUSTOMERS_FAILURE, FETCH_CUSTOMERS_REQUEST, FETCH_CUSTOMERS_SUCCESS } from '../actions/index';
+import { INIT_CUSTOMERS, UPDATE_CUSTOMERS } from '../actions/index';
 
 const customers = (state = [], action) => {
     switch (action.type) {
-        case FETCH_CUSTOMERS_SUCCESS:
+        case UPDATE_CUSTOMERS:
             return action.customers;
         default:
             return state;

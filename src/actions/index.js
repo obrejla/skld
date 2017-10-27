@@ -86,12 +86,11 @@ export const initProducts = () => (dispatch, getState) => {
     }
 };
 
-export const FETCH_CUSTOMERS_REQUEST = 'FETCH_CUSTOMERS_REQUEST';
-export const FETCH_CUSTOMERS_SUCCESS = 'FETCH_CUSTOMERS_SUCCESS';
-export const FETCH_CUSTOMERS_FAILURE = 'FETCH_CUSTOMERS_FAILURE';
-export const fetchCustomers = () => (dispatch) => {
+export const INIT_CUSTOMERS = 'INIT_CUSTOMERS';
+export const UPDATE_CUSTOMERS = 'UPDATE_CUSTOMERS';
+export const initCustomers = () => (dispatch) => {
     dispatch({
-        type: FETCH_CUSTOMERS_REQUEST,
+        type: INIT_CUSTOMERS,
     });
 
     fbdb.ref('customers').on('value', (snapshot) => {
@@ -103,7 +102,7 @@ export const fetchCustomers = () => (dispatch) => {
             surname: customersObj[key].surname,
         }));
         dispatch({
-            type: FETCH_CUSTOMERS_SUCCESS,
+            type: UPDATE_CUSTOMERS,
             customers,
         });
     });
