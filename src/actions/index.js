@@ -88,22 +88,24 @@ export const initProducts = () => (dispatch, getState) => {
 
 export const INIT_CUSTOMERS = 'INIT_CUSTOMERS';
 export const UPDATE_CUSTOMERS = 'UPDATE_CUSTOMERS';
-export const initCustomers = () => (dispatch) => {
-    dispatch({
-        type: INIT_CUSTOMERS,
-    });
-
-    fbdb.ref('customers').on('value', (snapshot) => {
-        const customersObj = snapshot.val();
-        const customers = [];
-        Object.keys(customersObj).forEach(key => customers.push({
-            id: key,
-            first_name: customersObj[key].first_name,
-            surname: customersObj[key].surname,
-        }));
+export const initCustomers = () => (dispatch, getState) => {
+    if (!selectors.isCustomersDidInit(getState())) {
         dispatch({
-            type: UPDATE_CUSTOMERS,
-            customers,
+            type: INIT_CUSTOMERS,
         });
-    });
+
+        fbdb.ref('customers').on('value', (snapshot) => {
+            const customersObj = snapshot.val();
+            const customers = [];
+            Object.keys(customersObj).forEach(key => customers.push({
+                id: key,
+                first_name: customersObj[key].first_name,
+                surname: customersObj[key].surname,
+            }));
+            dispatch({
+                type: UPDATE_CUSTOMERS,
+                customers,
+            });
+        });
+    }
 };
