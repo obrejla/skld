@@ -20,4 +20,6 @@ export const isProductsDidInit = state => productsSelectors.isProductsDidInit(st
 export const isInitProducts = state => productsSelectors.isInitProducts(state.products);
 export const getCustomers = state => customersSelectors.getAll(state.customers);
 export const getCustomer = (state, customerId) => customersSelectors.getCustomer(state.customers, customerId);
+export const isCustomersDidInit = state => customersSelectors.isCustomersDidInit(state.customers);
+export const isInitCustomers = state => customersSelectors.isInitCustomers(state.customers);
 export const getActiveExports = state => state.activeExports;
