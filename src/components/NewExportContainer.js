@@ -1,22 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
+import NewExport from './NewExport';
 import { getCustomers } from '../reducers/index';
+import { initCustomers } from '../actions/index';
 
-const NewExportContainer = ({ customers }) => (
-    <div>
-        Create new export for customer:
-        <FormGroup controlId="formControlsSelect">
-            <ControlLabel>Select</ControlLabel>
-            <FormControl componentClass="select" placeholder="select">
-                {customers.map(customer => <option key={customer.id} value={customer.id}>{customer.surname}, {customer.first_name}</option>)}
-            </FormControl>
-        </FormGroup>
-    </div>
-);
+class NewExportContainer extends React.Component {
+    componentWillMount() {
+        this.props.initCustomers();
+    }
+
+    render() {
+        return (
+            <NewExport customers={this.props.customers} />
+        );
+    }
+}
 
 NewExportContainer.propTypes = {
+    initCustomers: PropTypes.func.isRequired,
     customers: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string.isRequired,
         first_name: PropTypes.string.isRequired,
@@ -28,4 +30,8 @@ const mapStateToProps = state => ({
     customers: getCustomers(state),
 });
 
-export default connect(mapStateToProps)(NewExportContainer);
+const mapDispatchToProps = {
+    initCustomers,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewExportContainer);
