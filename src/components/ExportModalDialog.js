@@ -86,6 +86,9 @@ class ExportModalDialog extends React.Component {
 ExportModalDialog.propTypes = {
     onShow: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
+    removeAmount: PropTypes.func.isRequired,
+    createActiveExport: PropTypes.func.isRequired,
+    updateActiveExport: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
