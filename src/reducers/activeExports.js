@@ -23,7 +23,7 @@ const updateActiveExports = (state = [], action) => (state.map((activeExport) =>
     return result;
 }));
 
-const currentExportTransactions = (state = [], action) => {
+const activeExports = (state = [], action) => {
     switch (action.type) {
         case UPDATE_ACTIVE_EXPORT:
             return updateActiveExports(state, action);
@@ -40,10 +40,10 @@ const currentExportTransactions = (state = [], action) => {
                 },
             ];
         case REMOVE_ACTIVE_EXPORT:
-            return state.filter(transaction => transaction.id === action.id);
+            return state.filter(activeExport => activeExport.id === action.id);
         default:
             return state;
     }
 };
 
-export default currentExportTransactions;
+export default activeExports;
