@@ -91,18 +91,16 @@ ExportModalDialog.propTypes = {
     updateActiveExport: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        removeAmount(amount) {
-            dispatch(removeProductAmount(ownProps.productId, amount));
-        },
-        createActiveExport(customerId, amount) {
-            dispatch(addActiveExport(customerId, ownProps.productId, amount));
-        },
-        updateActiveExport(activeExportId, amount) {
-            dispatch(updateActiveExport(activeExportId, ownProps.productId, amount));
-        },
-    };
-};
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    removeAmount(amount) {
+        dispatch(removeProductAmount(ownProps.productId, amount));
+    },
+    createActiveExport(customerId, amount) {
+        dispatch(addActiveExport(customerId, ownProps.productId, amount));
+    },
+    updateActiveExport(activeExportId, amount) {
+        dispatch(updateActiveExport(activeExportId, ownProps.productId, amount));
+    },
+});
 
 export default connect(null, mapDispatchToProps)(ExportModalDialog);
