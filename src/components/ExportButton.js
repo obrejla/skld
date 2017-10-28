@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button, Glyphicon } from 'react-bootstrap';
 import ExportModalDialog from './ExportModalDialog';
 
@@ -30,10 +31,14 @@ class ExportButton extends React.Component {
         return (
             <Button componentClass="a" onClick={this.onShow} bsStyle="danger" block>
                 <Glyphicon glyph="export" />
-                <ExportModalDialog onShow={this.state.isVisible} onClose={this.onClose} />
+                <ExportModalDialog productId={this.props.productId} onShow={this.state.isVisible} onClose={this.onClose} />
             </Button>
         );
     }
 }
+
+ExportButton.propTypes = {
+    productId: PropTypes.string.isRequired,
+};
 
 export default ExportButton;

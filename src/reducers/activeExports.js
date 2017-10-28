@@ -1,7 +1,32 @@
-import { ADD_ACTIVE_EXPORT, REMOVE_ACTIVE_EXPORT } from '../actions/index';
+import { ADD_ACTIVE_EXPORT, REMOVE_ACTIVE_EXPORT, UPDATE_ACTIVE_EXPORT } from '../actions/index';
+
+const updateProducts = (state, action) => (state.map((product) => {
+    let prodResult = product;
+    if (product.productId === action.productId) {
+        prodResult = {
+            productId: action.productId,
+            amount: product.amount + action.amount,
+        };
+    }
+    return prodResult;
+}));
+
+const updateActiveExports = (state = [], action) => (state.map((activeExport) => {
+    let result = activeExport;
+    if (activeExport.id === action.id) {
+        const products = updateProducts(activeExport.products, action);
+        result = {
+            ...activeExport,
+            products,
+        };
+    }
+    return result;
+}));
 
 const currentExportTransactions = (state = [], action) => {
     switch (action.type) {
+        case UPDATE_ACTIVE_EXPORT:
+            return updateActiveExports(state, action);
         case ADD_ACTIVE_EXPORT:
             return [
                 ...state,

@@ -14,8 +14,12 @@ class ActiveExportsContainer extends React.Component {
     }
 
     onExportSelect(id) {
-        this.setState({
-            selectedExportId: id,
+        this.setState((prevState) => {
+            const newSelectedId = prevState.selectedExportId === id ? null : id;
+            this.props.onActiveExportIdChanged(newSelectedId);
+            return {
+                selectedExportId: newSelectedId,
+            };
         });
     }
 
@@ -31,6 +35,7 @@ class ActiveExportsContainer extends React.Component {
 }
 
 ActiveExportsContainer.propTypes = {
+    onActiveExportIdChanged: PropTypes.func.isRequired,
     activeExports: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,

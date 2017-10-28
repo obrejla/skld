@@ -16,7 +16,7 @@ class NewExportContainer extends React.Component {
     }
 
     onSelect(customerId) {
-        this.customerId = customerId;
+        this.props.onNewExportCustomerId(customerId);
     }
 
     render() {
@@ -27,6 +27,7 @@ class NewExportContainer extends React.Component {
 }
 
 NewExportContainer.propTypes = {
+    onNewExportCustomerId: PropTypes.func.isRequired,
     initCustomers: PropTypes.func.isRequired,
     customers: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string.isRequired,
