@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import {
     INIT_CUSTOMERS,
     UPDATE_CUSTOMERS,
-} from '../actions/index';
+} from '../actions';
 
 const initCustomers = (state = false, action) => {
     switch (action.type) {

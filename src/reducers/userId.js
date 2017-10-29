@@ -1,4 +1,4 @@
-import { USER_SIGNED_IN, USER_SIGNED_OUT, getInitUserUid } from '../actions/index';
+import { USER_SIGNED_IN, USER_SIGNED_OUT, getInitUserUid } from '../actions';
 
 const userUid = (state = getInitUserUid(), action) => {
     switch (action.type) {

@@ -3,7 +3,7 @@ import { Glyphicon } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import NumberModalDialog from './NumberModalDialog';
-import { removeProductAmount } from '../actions/index';
+import { removeProductAmount } from '../actions';
 
 const RemoveButton = ({ removeAmount }) => (
     <NumberModalDialog onProcess={removeAmount} bsStyle="danger" title="Decrease Amount"><Glyphicon glyph="export" /></NumberModalDialog>

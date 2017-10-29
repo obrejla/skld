@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 import firebase from 'firebase';
 import firebaseui from 'firebaseui';
 import './login.css';
-import { userSignedIn } from '../actions/index';
-import { isUserSignedIn } from '../reducers/index';
+import { userSignedIn } from '../actions';
+import { isUserSignedIn } from '../reducers';
 
 const authUi = new firebaseui.auth.AuthUI(firebase.auth());
 

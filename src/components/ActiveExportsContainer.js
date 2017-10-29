@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getActiveExports } from '../reducers/index';
+import { getActiveExports } from '../reducers';
 import ActiveExports from './ActiveExports';
 
 class ActiveExportsContainer extends React.Component {

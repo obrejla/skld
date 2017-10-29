@@ -1,4 +1,4 @@
-import { ADD_ACTIVE_EXPORT, REMOVE_ACTIVE_EXPORT, UPDATE_ACTIVE_EXPORT } from '../actions/index';
+import { ADD_ACTIVE_EXPORT, REMOVE_ACTIVE_EXPORT, UPDATE_ACTIVE_EXPORT } from '../actions';
 
 const updateProducts = (state, action) => (state.map((product) => {
     let prodResult = product;

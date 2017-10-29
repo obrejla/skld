@@ -4,7 +4,7 @@ import {
     UPDATE_PRODUCTS,
     ADD_PRODUCT_AMOUNT,
     REMOVE_PRODUCT_AMOUNT,
-} from '../actions/index';
+} from '../actions';
 
 const initProducts = (state = false, action) => {
     switch (action.type) {

@@ -1,6 +1,6 @@
 import uuid from 'uuid';
 import { fbdb } from '../firebase';
-import * as selectors from '../reducers/index';
+import * as selectors from '../reducers';
 
 export const UPDATE_ACTIVE_EXPORT = 'UPDATE_ACTIVE_EXPORT';
 export const updateActiveExport = (id, productId, amount) => ({

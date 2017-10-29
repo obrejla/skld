@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ListGroupItem } from 'react-bootstrap';
 import ActiveExportProducts from './ActiveExportProducts';
-import { getCustomer } from '../reducers/index';
+import { getCustomer } from '../reducers';
 
 const ActiveExport = ({
     activeExport,
