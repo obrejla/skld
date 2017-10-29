@@ -24,7 +24,7 @@ export const removeActiveExport = id => ({
 });
 
 const USER_UID_KEY = 'user_uid';
-export const getInirUserUid = () => localStorage.getItem(USER_UID_KEY);
+export const getInitUserUid = () => localStorage.getItem(USER_UID_KEY);
 export const USER_SIGNED_IN = 'USER_SIGNED_IN';
 export const userSignedIn = (userUid) => {
     localStorage.setItem(USER_UID_KEY, userUid);

@@ -1,6 +1,6 @@
-import { USER_SIGNED_IN, USER_SIGNED_OUT, getInirUserUid } from '../actions/index';
+import { USER_SIGNED_IN, USER_SIGNED_OUT, getInitUserUid } from '../actions/index';
 
-const userUid = (state = getInirUserUid(), action) => {
+const userUid = (state = getInitUserUid(), action) => {
     switch (action.type) {
         case USER_SIGNED_IN:
             return action.userUid;
