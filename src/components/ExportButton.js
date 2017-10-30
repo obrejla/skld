@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Glyphicon } from 'react-bootstrap';
-import ExportModalDialog from './ExportModalDialog';
+import ExportModalDialog from '../containers/ExportModalDialog';
 
 class ExportButton extends React.Component {
     constructor(props) {

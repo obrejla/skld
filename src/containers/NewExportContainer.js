@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import NewExport from './NewExport';
-import { getCustomers } from '../reducers';
-import { initCustomers } from '../actions';
+import NewExport from '../components/NewExport';
+import { getCustomers } from '../reducers/index';
+import { initCustomers } from '../actions/index';
 
 class NewExportContainer extends React.Component {
     constructor(props) {

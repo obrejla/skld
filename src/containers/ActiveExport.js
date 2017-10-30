@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ListGroupItem } from 'react-bootstrap';
-import ActiveExportProducts from './ActiveExportProducts';
-import { getCustomer } from '../reducers';
+import ActiveExportProducts from '../components/ActiveExportProducts';
+import { getCustomer } from '../reducers/index';
 
 const ActiveExport = ({
     activeExport,

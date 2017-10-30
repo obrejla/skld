@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getProduct } from '../reducers';
+import { getProduct } from '../reducers/index';
 
 const ActiveExportProduct = ({ name, amount }) => (
     <tr>

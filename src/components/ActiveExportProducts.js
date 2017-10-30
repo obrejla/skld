@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Table } from 'react-bootstrap';
-import ActiveExportProduct from './ActiveExportProduct';
+import ActiveExportProduct from '../containers/ActiveExportProduct';
 
 const ActiveExportProducts = ({ products }) => (
     <Table>

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ActiveExportsContainer from './ActiveExportsContainer';
-import NewExportContainer from './NewExportContainer';
+import ActiveExportsContainer from '../containers/ActiveExportsContainer';
+import NewExportContainer from '../containers/NewExportContainer';
 
 const PossibleExports = ({ onActiveExportIdChanged, onNewExportCustomerId }) => (
     <div>

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { initProducts } from '../actions';
-import { getProducts } from '../reducers';
-import ProductsList from './ProductsList';
+import { initProducts } from '../actions/index';
+import { getProducts } from '../reducers/index';
+import ProductsList from '../components/ProductsList';
 
 class ProductsContainer extends Component {
     componentDidMount() {

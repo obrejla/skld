@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ListGroup } from 'react-bootstrap';
-import ActiveExport from './ActiveExport';
+import ActiveExport from '../containers/ActiveExport';
 
 const ActiveExports = ({ activeExports, selectedExportId, onExportSelect }) => (
     <div>

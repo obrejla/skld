@@ -2,8 +2,8 @@ import React from 'react';
 import { Glyphicon } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import NumberModalDialog from './NumberModalDialog';
-import { addProductAmount } from '../actions';
+import NumberModalDialog from '../components/NumberModalDialog';
+import { addProductAmount } from '../actions/index';
 
 const AddButton = ({ addAmount }) => (
     <NumberModalDialog onProcess={addAmount} bsStyle="success" title="Increase Amount"><Glyphicon glyph="import" /></NumberModalDialog>

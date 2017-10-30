@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col, ButtonGroup } from 'react-bootstrap';
-import AddButton from './AddButton';
+import AddButton from '../containers/AddButton';
 import ExportButton from './ExportButton';
 
 const getColorClass = (amount) => {

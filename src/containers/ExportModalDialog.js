@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Modal, Button } from 'react-bootstrap';
-import PossibleExports from './PossibleExports';
-import ExportAmount from './ExportAmount';
-import { removeProductAmount, addActiveExport, updateActiveExport } from '../actions';
+import PossibleExports from '../components/PossibleExports';
+import ExportAmount from '../components/ExportAmount';
+import { removeProductAmount, addActiveExport, updateActiveExport } from '../actions/index';
 
 class ExportModalDialog extends React.Component {
     constructor(props) {
