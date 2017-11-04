@@ -40,7 +40,7 @@ const activeExports = (state = [], action) => {
                 },
             ];
         case REMOVE_ACTIVE_EXPORT:
-            return state.filter(activeExport => activeExport.id === action.id);
+            return state.filter(activeExport => activeExport.id !== action.id);
         default:
             return state;
     }
