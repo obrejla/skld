@@ -1,15 +1,26 @@
 import { ADD_ACTIVE_EXPORT, REMOVE_ACTIVE_EXPORT, UPDATE_ACTIVE_EXPORT } from '../actions';
 
-const updateProducts = (state, action) => (state.map((product) => {
-    let prodResult = product;
-    if (product.productId === action.productId) {
-        prodResult = {
+const updateProducts = (state, action) => {
+    let isNewProduct = true;
+    const newProductsState = state.map((product) => {
+        let prodResult = product;
+        if (product.productId === action.productId) {
+            isNewProduct = false;
+            prodResult = {
+                productId: action.productId,
+                amount: product.amount + action.amount,
+            };
+        }
+        return prodResult;
+    });
+    if (isNewProduct) {
+        newProductsState.push({
             productId: action.productId,
-            amount: product.amount + action.amount,
-        };
+            amount: action.amount,
+        });
     }
-    return prodResult;
-}));
+    return newProductsState;
+};
 
 const updateActiveExports = (state = [], action) => (state.map((activeExport) => {
     let result = activeExport;
